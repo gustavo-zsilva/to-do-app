@@ -44,7 +44,7 @@ section.new-todo input {
 section.new-todo a {
     text-decoration: none;
     text-transform: uppercase;
-    position: absolute;
+    position: fixed;
     left: 60%;
     top: 95px;
     font-weight: 600;
