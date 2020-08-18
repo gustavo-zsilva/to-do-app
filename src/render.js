@@ -1,12 +1,8 @@
-const input = document.querySelector('.new-todo input')
-const addBtn = document.querySelector('.new-todo .add-link')
-const clear = document.querySelector('.all-todos .clear')
+import { ul } from './variables';
+import { todos } from './script';
+import saveToStorage from './storage';
 
-let ul = document.querySelector('.all-todos ul')
-
-let todos = JSON.parse(localStorage.getItem('list_todos')) || [];
-
-function renderTodos() {
+export default function renderTodos() {
 
     ul.innerHTML = ''
 
@@ -51,42 +47,3 @@ function renderTodos() {
     })
     
 }
-
-
-addBtn.addEventListener('click', () => {
-    
-    if (input.value.length <= 0) {
-        alert('Digite um to-do válido.')
-
-    } else {
-        todos.push(input.value)
-
-        // Resetar o campo do input
-        input.value = ''
-        input.focus()
-
-        renderTodos()
-    }
-
-})
-
-// Limpa todos to-dos
-clear.addEventListener('click', () => {
-    todos = []
-    localStorage.clear()
-    renderTodos()
-})
-
-// Salvar em localStorage
-function saveToStorage() {
-    localStorage.setItem('list_todos', JSON.stringify(todos)) 
-}
-
-renderTodos()
-
-// localStorage.setItem("name", "domenic")
-// localStorage.clear()
-// localStorage.removeItem("name")
-// localStorage.setItem("age", "30")
-// localStorage.setItem("name", "domenic")
-// console.log(localStorage.key(0));

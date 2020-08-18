@@ -1,0 +1,16 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gustavo-zsilva/to-do-app.git",
+  "author": "Gustavo Zonta da Silva <gustavozontadasilva@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "dev": "webpack --mode=development -w",
+    "build": "webpack --mode=production"
+  }
+}
